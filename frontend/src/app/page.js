@@ -8,7 +8,7 @@ export default function HomePage() {
     const [loading, setLoading] = useState(true);
   
     useEffect(() => {
-      fetch('http://localhost:4000/api/quotes') // ✅ use port 4000
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/quotes`) // ✅ use port 4000
         .then(res => res.json())
         .then(data => {
           setQuotes(data);
